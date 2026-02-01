@@ -11,7 +11,7 @@ The script automatically:
 * Calculates key business KPIs
 * Generates an Excel report
 * Creates visual charts
-* Is fully schedulable using **Windows Task Scheduler**
+* Can be scheduled to run daily using **Windows Task Scheduler**
 
 This project reflects **industry-standard automation practices** commonly used by Data Analysts.
 
@@ -39,7 +39,7 @@ A Python-based automation pipeline that:
 3. Calculates KPIs
 4. Generates formatted Excel reports
 5. Creates revenue visualizations
-6. Runs automatically on a daily schedule
+6. Runs automatically on a daily schedule using **Windows Task Scheduler**
 
 ---
 
@@ -127,24 +127,36 @@ python automation.py
 
 ---
 
-## ⏰ Daily Scheduling (Automation)
+## ⏰ Daily Scheduling Using Windows Task Scheduler
 
-The script is scheduled using **Windows Task Scheduler**:
+The automation can run **daily without manual intervention** using Windows Task Scheduler.
 
-* Runs automatically at a fixed time every day
-* Uses absolute Python and project paths
-* Executes even when the user is not logged in
+### Steps:
 
-This ensures **zero manual effort** after setup.
+1. Open **Task Scheduler** (`taskschd.msc`) on Windows.
+2. Click **Create Basic Task** and provide a name & description.
+3. Trigger → Select **Daily** and set the time.
+4. Action → **Start a Program**
+
+   * Program/script: `C:\Users\Prafull Wahatule\AppData\Local\Programs\Python\Python313\python.exe`
+   * Add arguments: `automation.py`
+   * Start in: `C:\Users\Prafull Wahatule\Desktop\sales_automation`
+5. Check **Open the Properties dialog box for this task when I click Finish** to configure advanced settings:
+
+   * Run whether user is logged on or not
+   * Run with highest privileges
+6. Save the task. Task will now execute the Python script automatically at the scheduled time.
+
+This ensures **consistent daily reporting** with zero manual effort.
 
 ---
 
 ## 🧠 Key Features
 
-✔ Dynamic file detection
-✔ Robust data validation
-✔ Error handling & safety checks
-✔ Scheduler-ready Python script
+✔ Dynamic file detection  
+✔ Robust data validation  
+✔ Error handling & safety checks  
+✔ Scheduler-ready Python script  
 ✔ Industry-level automation design
 
 ---
